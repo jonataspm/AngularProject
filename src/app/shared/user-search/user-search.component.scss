@@ -1,0 +1,21 @@
+@import '../../../config-scss/variables.scss';
+@import '../../../config-scss/size.scss';
+
+:host{
+    form{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: rgba($color: #b6e3ff, $alpha: 0.5) ;
+        padding: sizeRem(15) sizeRem(15);
+        border-radius: sizeRem(10);
+    }
+    input{
+        width: 95%;
+        background: none;
+        border: none;
+        font-size:  sizeRem(18);
+        font-weight: 300%;
+    }
+} 

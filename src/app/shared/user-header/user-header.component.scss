@@ -1,0 +1,21 @@
+@import '../../../config-scss/size.scss';
+:host{
+    header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: sizeRem(40) 0;
+    }
+    img{
+        width: sizeRem(60);
+        height: sizeRem(60);
+        background-size: sizeRem(60);
+        font-size: 16px; 
+    }
+    h1{
+        font-size: sizeRem(60);
+        text-shadow: #80ccff 0px 3px 0px;
+        padding-right: sizeRem(20);
+    }
+}

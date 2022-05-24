@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+@import './config-scss/variables.scss';
+@import './config-scss/reset.scss';
+@import './config-scss/size.scss';
+
+html{
+
+    font-family:'Unbuto', sans-serif;
+    background: var(--BackGround);
+
+}
+
+main{
+    
+    max-width: sizeRem(600);
+    margin: 0 auto;
+    box-sizing: border-box;
+
+}
