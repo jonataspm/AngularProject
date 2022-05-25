@@ -1,7 +1,42 @@
+@import '../../../config-scss/variables.scss';
+@import '../../../config-scss/size.scss';
+
 :host{
+    display: flex;
+    justify-content: space-between;
+    padding: sizeRem(20) 0;
     .user{
+        position: relative;
         display: flex;
-        width: 48%;
-        background: var();
+        width: 32%;
+        height: sizeRem(200);
+        padding: sizeRem(20);
+        border-radius: sizeRem(20);
+        align-items: center;
+        justify-content: center;
+
+        background:  rgba($color: #b6e3ff, $alpha: 0.2);
+        box-shadow: var(--color-scale-blue-1) -2px 2px 0px;
+
+        &-low-profile{
+            h2{
+                font-size: remSize(18);
+                font-style: italic;
+                font-weight: 700;
+            }
+            ul{
+                display: flex;
+                flex-direction: column;
+
+                li{
+                    background: rgba($color: #b6e3ff, $alpha: 0.5);
+                    border-radius: sizeRem(50);
+                    width: min-content;
+                    
+                }
+            }
+        
+        }
+        
     }
 }

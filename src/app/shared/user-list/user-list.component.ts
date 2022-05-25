@@ -1,3 +1,4 @@
+import { UserapiService } from './../../service/userapi.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userapiService:UserapiService ) { }
 
   ngOnInit(): void {
+    this.userapiService.userList.subscribe(res=>console.log(res));
   }
 
 }
