@@ -1,11 +1,9 @@
-<a href="" class="user">
-    <div class="user-low-profile">
-        <img class="user-avatar" src="" alt="user icon">
-        <h2>
-            Login
-        </h2>
-        <ul>
-            <li>Id</li>
-        </ul>
-    </div>
-</a>
+<ng-template ngFor let-user [ngForOf] = "getUserListVar">
+    <a href="" class="user">
+        <div class="user-low-profile">
+            <img class="user-avatar" src="{{user.avatar_url}}" alt="user icon">
+            <h2>{{user.login}}</h2>
+            <p>Id: {{user.id}}</p>   
+        </div>
+    </a>
+</ng-template>

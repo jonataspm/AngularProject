@@ -8,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserListComponent implements OnInit {
 
+  public getUserListVar:any;
   constructor(private userapiService:UserapiService ) { }
 
   ngOnInit(): void {
-    this.userapiService.userList.subscribe(res=>console.log(res));
+    this.userapiService.userList.subscribe(res=>{
+      this.getUserListVar = res;
+      console.log(res)
+     }
+      );
   }
 
 }

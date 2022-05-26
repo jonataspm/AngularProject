@@ -11,13 +11,13 @@ import { map, tap } from "rxjs/operators";
 export class UserapiService {
   
   constructor(private httpClient: HttpClient) { }
-  private urn: string = 'https://api.github.com/users?page=1&per_page=100';
+  private urn: string = 'https://api.github.com/users?page=1&per_page=3';
 
   get userList():Observable<any>{
     return this.httpClient.get<any>(this.urn).pipe(
       tap(res=>res), 
       tap(res => {
-        res.results.map((resRepo: any) => {
+        res.map((resRepo: any) => {
           this.apiGetUserRepo(resRepo.repos_url).subscribe(
             res => resRepo.repository = res
           )
