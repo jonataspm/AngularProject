@@ -2,22 +2,41 @@
 @import '../../../config-scss/size.scss';
 
 :host{
-    display: flex;
-    justify-content: space-between;
-    padding: sizeRem(20) 0;
+    .list{
+        display: flex;
+        justify-content: space-between;
+        padding: sizeRem(20) 0;
+        flex-wrap: wrap;
     
-    .user{
-       
-        div{
-            width: 150px;
-            height: 120px;
+        .user{
+        background: var(--color-scale-blue-1);
+        border-radius: 20px;
+        text-align: center;
+        border: 6px double var(--color-scale-blue-2);
+        margin-bottom: 5px;
+        text-decoration: none;
+        
+            
+            div{
+                margin: 10px;
+                width: 150px;
+                //height: 120px;
+
+                h2{
+                    text-transform: capitalize;
+                }
+            }
+            
+            img{
+                width: 100px;
+                border-radius: 100%;
+                max-height: 100%;
+                border-style: solid;
+                border: 2px black;
+            
+            }
+            
+            
         }
-        
-        img{
-            width: 100px;
-            border-radius: 100%;
         }
-        
-        
-    }
 }

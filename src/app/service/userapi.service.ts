@@ -11,7 +11,7 @@ import { map, tap } from "rxjs/operators";
 export class UserapiService {
   
   constructor(private httpClient: HttpClient) { }
-  private urn: string = 'https://api.github.com/users?page=1&per_page=3';
+  private urn: string = 'https://api.github.com/users?page=1&per_page=5';
 
   get userList():Observable<any>{
     return this.httpClient.get<any>(this.urn).pipe(
