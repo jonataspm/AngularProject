@@ -6,10 +6,24 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
         background-color: rgba($color: #b6e3ff, $alpha: 0.5) ;
-        padding: sizeRem(15) sizeRem(15);
         border-radius: sizeRem(10);
+
+        button{
+        max-height: 100%;
+        padding: sizeRem(5) sizeRem(5);
+
+        float: left;
+        width: 20%;
+        background: var(--color-scale-blue-2);
+        font-size: 5px;
+        border: 1px solid var(--color-scale-blue-3);
+        border-left: none;
+        border-top-right-radius: sizeRem(10);
+        border-bottom-right-radius: sizeRem(10);
+        cursor: pointer;
+
+        }
     }
     input{
         width: 95%;
@@ -17,5 +31,7 @@
         border: none;
         font-size:  sizeRem(18);
         font-weight: 300%;
+        padding: sizeRem(5) sizeRem(10);
     }
+    
 } 

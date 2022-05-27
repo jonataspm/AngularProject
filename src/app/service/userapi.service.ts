@@ -9,28 +9,35 @@ import { map, tap } from "rxjs/operators";
   providedIn: 'root'
 })
 export class UserapiService {
-  
+  userName:any
+  //resRepo: any
   constructor(private httpClient: HttpClient) { }
-  private urn: string = 'https://api.github.com/users?page=1&per_page=5';
+  private urn: string = 'https://api.github.com/users';
+  
 
   get userList():Observable<any>{
     return this.httpClient.get<any>(this.urn).pipe(
-      tap(res=>res), 
+      tap(res=>res)
+      )
+  }
+
+  get user():Observable<any>{
+    return this.httpClient.get<any>(this.urn+"/"+this.userName).pipe(
+      tap(res=>res)/*, 
       tap(res => {
-        res.map((resRepo: any) => {
-          this.apiGetUserRepo(resRepo.repos_url).subscribe(
-            res => resRepo.repository = res
+       this.apiGetUserRepo(res.repos_url).subscribe(
+            res => this.resRepo.repository = res
           )
-        })
-      })
+      } )*/
+    )
+  }
+  public apiGetUserRepo( url: string):Observable<any>{
+    return this.httpClient.get<any>( url ).pipe(
+      map(res => res)
     )
   }
 
-  public apiGetUserRepo( url: string):Observable<any>{
-    return this.httpClient.get<any>( url ).pipe(
-      map(
-       res => res
-      )
-    )
+  public getUsername(getname: string) {
+    this.userName = getname;
   }
 }

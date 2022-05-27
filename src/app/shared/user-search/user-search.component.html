@@ -2,6 +2,6 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <form>
-    <input type="text" placeholder="Search by user...">
-    <i class="material-icons">search</i>
+    <input #input type="text" placeholder="Search by user...">
+    <button (click)=search(input.value) type="button"><i class="material-icons">search</i></button>
 </form>

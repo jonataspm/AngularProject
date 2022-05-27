@@ -9,14 +9,28 @@ import { Component, OnInit } from '@angular/core';
 export class UserListComponent implements OnInit {
 
   public getUserListVar:any;
+  private setUserListVar :any;
   constructor(private userapiService:UserapiService ) { }
 
   ngOnInit(): void {
     this.userapiService.userList.subscribe(res=>{
-      this.getUserListVar = res;
-      console.log(res)
-     }
+      this.setUserListVar = res
+      this.getUserListVar = this.setUserListVar;
+       }
+    );
+  }
+  public getUser(value: string){
+    this.userapiService.getUsername(value);
+    this.userapiService.user.subscribe(res=>{
+      console.log(res),
+      this.getUser = this.getUserListVar = res}
       );
   }
-
+ /* public getSearch(value: string){
+    const filter = this.getUserListVar.filter((res: any ) => {
+      return !res.login.indexOf(value.toLowerCase());
+    });
+    this.getSearch = filter; 
+  }*/
+  
 }

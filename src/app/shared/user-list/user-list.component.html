@@ -1,8 +1,8 @@
-<user-search></user-search>
+<user-search (emmitSearch)="getUser($event)"></user-search>
 
 <section class="list">
     <ng-template ngFor let-user [ngForOf] = "getUserListVar">
-        <a [routerLink]="['details', user.id]" class="user" *ngIf="user">
+        <a [routerLink]="['details', user.id]" class="user">
             <div class="user-low-profile">
                 <img class="user-avatar" [src]="user.avatar_url" [alt]="user.login">
                 <h2>{{user.login}}</h2>

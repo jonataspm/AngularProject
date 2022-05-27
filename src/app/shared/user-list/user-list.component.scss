@@ -23,7 +23,9 @@
                 //height: 120px;
 
                 h2{
+                    font-size: clamp(sizeRem(15), sizeRem(15) + 1vw, sizeRem(20));
                     text-transform: capitalize;
+                    max-width: 100%;
                 }
             }
             
