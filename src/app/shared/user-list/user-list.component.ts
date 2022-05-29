@@ -10,6 +10,8 @@ export class UserListComponent implements OnInit {
 
   public getUserListVar:any;
   private setUserListVar :any;
+  public apiError: boolean = false;
+
   constructor(private userapiService:UserapiService ) { }
 
   ngOnInit(): void {
@@ -18,19 +20,5 @@ export class UserListComponent implements OnInit {
       this.getUserListVar = this.setUserListVar;
        }
     );
-  }
-  public getUser(value: string){
-    this.userapiService.getUsername(value);
-    this.userapiService.user.subscribe(res=>{
-      console.log(res),
-      this.getUser = this.getUserListVar = res}
-      );
-  }
- /* public getSearch(value: string){
-    const filter = this.getUserListVar.filter((res: any ) => {
-      return !res.login.indexOf(value.toLowerCase());
-    });
-    this.getSearch = filter; 
-  }*/
-  
+  }  
 }

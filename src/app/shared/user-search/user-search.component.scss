@@ -9,10 +9,9 @@
         background-color: rgba($color: #b6e3ff, $alpha: 0.5) ;
         border-radius: sizeRem(10);
 
-        button{
+        a{
         max-height: 100%;
         padding: sizeRem(5) sizeRem(5);
-
         float: left;
         width: 20%;
         background: var(--color-scale-blue-2);
@@ -23,6 +22,10 @@
         border-bottom-right-radius: sizeRem(10);
         cursor: pointer;
 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
         }
     }
     input{

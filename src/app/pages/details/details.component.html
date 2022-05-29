@@ -1,1 +1,52 @@
-<p>details works!</p>
+<user-header></user-header>
+
+<main>
+
+  <ng-template [ngIf]="isLoading">
+    <section class="user-identity">
+        <h2 class="slideInRight">Id: {{user[0].id}}</h2>
+        <h1 class="slideInRight">Login: {{user[0].login}}</h1>
+    </section>
+
+    <section class="user-analyst">
+        <img
+        [src]="user[0].avatar_url"
+        [alt]="user[0].name"
+        class="slideInDown"
+        >
+
+      <article class="user-analyst-statistics fadeIn">
+        <div class="infos">
+            <a href="{{user[0].html_url}}" class="git">Perfil no gitHub</a>
+            <h4 class="slideInRight">Criado: {{user[0].created_at.substring(0,10)}} </h4>
+        </div>
+        <section>
+            <h3>Repositorios</h3>
+            <tr class="tagTable">
+                <td class="bold">Id</td>
+                <td class="bold">Nome</td>
+                <td class="bold">Url</td>
+            </tr>
+            
+            <tr *ngFor="let value of user[1]">
+                <td>{{ value.id }}</td>
+                <td>{{ value.name }}</td>
+                <td><a href="{{ value.html_url }}">{{ value.html_url }}</a></td>
+                
+            </tr>
+        </section>
+
+        <a  [routerLink]="['']" class="back">
+          Voltar
+        </a>
+      </article>
+    </section>
+  </ng-template>
+
+  <img
+    src="assets/error.png"
+    alt="Deu erro na mostragem do pokemon"
+    width="100%"
+    *ngIf="apiError"
+  >
+</main>

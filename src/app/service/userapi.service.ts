@@ -20,24 +20,9 @@ export class UserapiService {
       tap(res=>res)
       )
   }
-
-  get user():Observable<any>{
-    return this.httpClient.get<any>(this.urn+"/"+this.userName).pipe(
-      tap(res=>res)/*, 
-      tap(res => {
-       this.apiGetUserRepo(res.repos_url).subscribe(
-            res => this.resRepo.repository = res
-          )
-      } )*/
-    )
-  }
-  public apiGetUserRepo( url: string):Observable<any>{
+  public apiGetUser( url: string):Observable<any>{
     return this.httpClient.get<any>( url ).pipe(
       map(res => res)
     )
-  }
-
-  public getUsername(getname: string) {
-    this.userName = getname;
-  }
+  } 
 }

@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
 <form>
-    <input #input type="text" placeholder="Search by user...">
-    <button (click)=search(input.value) type="button"><i class="material-icons">search</i></button>
+    <input (ngModel)="name" (input)="getName($event)" type="text" placeholder="Search by user...">
+    <a [routerLink]="['details', name]">
+    <i class="material-icons">search</i>
+    </a>
 </form>
